@@ -1,0 +1,164 @@
+do
+    local Translations = {
+        ["DP HUB"] = "DP中心-新年快乐汉化",
+        ["Info"]="信息",
+        ["Misc"]="杂项",
+        ["Notifications"]="通知",
+        ["Visual"]="视觉体验",
+        ["Chams"]="透视高亮",
+        ["ESP"]="实体高亮",
+        ["Character"]="角色",
+        ["Other"]="杂项",
+        ["Search..."]="搜索...",
+        ["Founder: PLO_MEX"]="创始人:PLO_MEX",
+        ["Co-Founder: iamunknwon77"]="联合创始人:iamunknwon77",
+        ["Discord server: gg/UwjVsbA6CR"]="新年快乐汉化",
+        ["Copy Discord link"]="复制Dc链接",
+        ["Copy Website link"]="复制网站链接",
+        ["STORE"] ="商店",
+        ["Custom Delay Optimization"] = "自定义延迟优化",
+        ["Instant Prompt"] = "即时提示",
+        ["No Seek Obstructions"] = "移除听声辨位障碍物",
+        ["Anti Snare"] = "防陷阱",
+        ["Anti Hearing"] = "防听觉检测",
+        ["Anti Stunned"] = "防眩晕",
+        ["Anti Eyes"] = "防眼睛怪",
+        ["Anti Screech"] = "防尖叫怪",
+        ["Rush Spawn"] = "rush怪物生成提醒",
+        ["Ambush Spawn"] = "Ambush怪物生成提醒",
+        ["Eyes Spawn"] = "Eyes怪物生成提醒",
+        ["Custom Fog"] = "自定义雾效",
+        ["Player Light"] = "玩家高亮",
+        ["Light Color"] = "高亮颜色",
+        ["Light Brightness"] = "亮度",
+        ["Rush"] = "Rush怪物透视",
+        ["Ambush"]="Ambush怪物透视",
+        ["Eyes"] = "Eyes怪物透视",
+        ["Figure"] = "Figure怪物透视",
+        ["Seek"] = "Seek怪物透视",
+        ["BATTLE MODE"] = "战斗模式",
+        ["FULL"] = "已满",
+        ["UNAVAILABLE"] = "不可用",
+        ["Welcome"] = "欢迎",
+        ["MVP"] = "最好玩家",
+        ["STORED"] = "已存储",
+        ["Need help?"] = "需要帮助?",
+        ["CMD-X V2 is in development."] = "CMD-X V2 正在开发中。",
+        ["Please join the discord for development updates."] = "你看你妈呢😈",
+        ["You can get the discord invite by using the .discord command."] = "你可以使用命令获取Dc邀请链接",
+        ["Speed Bypass"] = "速度增加",
+        ["Eternal Jump"] = "无限跳跃",
+    }
+
+    local function translateText(text)
+        if not text or type(text) ~= "string" then return text end
+        
+        if Translations[text] then
+            return Translations[text]
+        end
+        
+        for en, cn in pairs(Translations) do
+            if text:find(en) then
+                return text:gsub(en, cn)
+            end
+        end
+        
+        return text
+    end
+
+    local function setupTranslationEngine()
+        local success, err = pcall(function()
+            local oldIndex = getrawmetatable(game).__newindex
+            setreadonly(getrawmetatable(game), false)
+            
+            getrawmetatable(game).__newindex = newcclosure(function(t, k, v)
+                if (t:IsA("TextLabel") or t:IsA("TextButton") or t:IsA("TextBox")) and k == "Text" then
+                    v = translateText(tostring(v))
+                end
+                return oldIndex(t, k, v)
+            end)
+            
+            setreadonly(getrawmetatable(game), true)
+        end)
+        
+        if not success then
+            warn("元表劫持失败:", err)
+           
+            local translated = {}
+            local function scanAndTranslate()
+                for _, gui in ipairs(game:GetService("CoreGui"):GetDescendants()) do
+                    if (gui:IsA("TextLabel") or gui:IsA("TextButton") or gui:IsA("TextBox")) and not translated[gui] then
+                        pcall(function()
+                            local text = gui.Text
+                            if text and text ~= "" then
+                                local translatedText = translateText(text)
+                                if translatedText ~= text then
+                                    gui.Text = translatedText
+                                    translated[gui] = true
+                                end
+                            end
+                        end)
+                    end
+                end
+                
+                local player = game:GetService("Players").LocalPlayer
+                if player and player:FindFirstChild("PlayerGui") then
+                    for _, gui in ipairs(player.PlayerGui:GetDescendants()) do
+                        if (gui:IsA("TextLabel") or gui:IsA("TextButton") or gui:IsA("TextBox")) and not translated[gui] then
+                            pcall(function()
+                                local text = gui.Text
+                                if text and text ~= "" then
+                                    local translatedText = translateText(text)
+                                    if translatedText ~= text then
+                                        gui.Text = translatedText
+                                        translated[gui] = true
+                                    end
+                                end
+                            end)
+                        end
+                    end
+                end
+            end
+            
+            local function setupDescendantListener(parent)
+                parent.DescendantAdded:Connect(function(descendant)
+                    if descendant:IsA("TextLabel") or descendant:IsA("TextButton") or descendant:IsA("TextBox") then
+                        task.wait(0.1)
+                        pcall(function()
+                            local text = descendant.Text
+                            if text and text ~= "" then
+                                local translatedText = translateText(text)
+                                if translatedText ~= text then
+                                    descendant.Text = translatedText
+                                end
+                            end
+                        end)
+                    end
+                end)
+            end
+            
+            pcall(setupDescendantListener, game:GetService("CoreGui"))
+            local player = game:GetService("Players").LocalPlayer
+            if player and player:FindFirstChild("PlayerGui") then
+                pcall(setupDescendantListener, player.PlayerGui)
+            end
+            
+            while true do
+                scanAndTranslate()
+                task.wait(3)
+            end
+        end
+    end
+
+    task.wait(2)
+    setupTranslationEngine()
+
+    local success, err = pcall(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/COOLXPLO/DP-HUB-coolxplo/refs/heads/main/Doors.lua"))()
+
+    end)
+
+    if not success then
+        warn("加载失败:", err)
+    end
+end

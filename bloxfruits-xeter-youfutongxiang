@@ -1,0 +1,459 @@
+do
+    local Translations = {
+        ["Tab Status"] = "状态面板",
+        ["Tab Setting"] = "设置面板",
+        ["Tab General"] = "通用面板",
+        ["Tab Quest & Item"] = "任务与物品",
+        ["Tab Race & Mirage"] = "种族与幻象",
+        ["Tab Sea Event"] = "海域事件",
+        ["Tab Volcano"] = "火山面板",
+        ["Tab Local Player"] = "本地玩家",
+        ["Tab Visual"] = "视觉面板",
+        ["Tab Fruit & Raid"] = "果实与突袭",
+        ["Tab Teleport"] = "传送面板",
+        ["Tab Shop"] = "商店面板",
+        ["Tab Miscellaneous"] = "杂项面板",
+        ["Join Discord"] = "加入Dc频道",
+        ["Discord | Xeter Hub"] = "Discord | Xeter ",
+        ["Status Player"] = "玩家状态",
+        ["[Server Time]:"] = "[服务器时间]:",
+        ["Race: Human"] = "种族: 人类",
+        ["Beli:"] = "贝利:",
+        ["Fragments:"] = "碎片:",
+        ["Bounty / Honor:"] = "悬赏/声望:",
+        ["Not Have Devil Fruit"] = "未拥有恶魔果实",
+        ["Players:"] = "玩家数:",
+        ["Total Elite Hunter:"] = "精英猎手总数:",
+        ["Status: Elite Not Spawn"] = "状态: 精英未刷新",
+        ["Total Bone:"] = "骨头总数:",
+        ["Defeat:"] = "击败数:",
+        ["Tyrant Of The Skies"] = "天空霸主",
+        ["Status Eyes"] = "状态: 眼睛",
+        ["Prehistoric Island"] = "史前岛屿",
+        ["Prehistoric Island :"] = "史前岛屿：",
+        ["Observation Haki:"] = "见闻色霸气:",
+        ["Speed Tween"] = "移动过渡",
+        ["Tween Speed"] = "过渡速度",
+        ["Tween PosY Hight"] = "纵向过渡高度",
+        ["Select PosY Hight"] = "选择纵向高度",
+        ["Spin Pos"] = "旋转位置",
+        ["Select PosX"] = "选择横向位置",
+        ["Select PosY"] = "选择纵向位置",
+        ["Select PosZ"] = "选择纵深位置",
+        ["Stop All Tween"] = "停止所有过渡",
+        ["Disabled Notifications"] = "禁用通知",
+        ["Disabled Sound"] = "禁用音效",
+        ["Disabled Damage Counter"] = "禁用伤害统计",
+        ["Fix Lag Screen"] = "修复卡顿",
+        ["White Screen"] = "白屏",
+        ["Invisible Monsters"] = "怪物隐形",
+        ["Fps Boost"] = "帧率提升",
+        ["Max Zoom"] = "最大缩放",
+        ["Graphic"] = "画面",
+        ["Remove Fog"] = "移除迷雾",
+        ["Remove Lava"] = "移除熔岩",
+        ["Remove Lava In Prehistoric Island"] = "清除史前岛屿熔岩",
+        ["Unlock FPS"] = "解锁帧率",
+        ["Show Chat disabled"] = "禁用聊天显示",
+        ["Show leaderboard disabled"] = "禁用排行榜显示",
+        ["Setting Farming"] = "刷怪设置",
+        ["Auto Attack Mob"] = "自动攻击怪物",
+        ["Auto Attack Player"] = "自动攻击玩家",
+        ["Auto Click"] = "自动点击",
+        ["Auto Shoot Gun"] = "自动开枪",
+        ["Bring Mob"] = "吸引怪物",
+        ["Bring Mob Mode"] = "吸引怪物",
+        ["Auto Haki"] = "自动霸气",
+        ["Auto Ken"] = "自动见闻色",
+        ["Select Weapon"] = "选择武器",
+        ["Melee"] = "近战",
+        ["Sword"] = "剑",
+        ["Fruit"] = "果实",
+        ["Gun"] = "枪",
+        ["Fast Attack Delay"] = "快速攻击延迟",
+        ["Xeter Attack"] = "Xeter 攻击",
+        ["Normal Attack"] = "普通攻击",
+        ["Fast Attack"] = "快速攻击",
+        ["Super Attack"] = "超级攻击",
+        ["Farming"] = "刷怪",
+        ["Auto Farm Level"] = "自动刷等级",
+        ["Auto Farm Skip (Farm Lv.1-100)"] = "自动跳过刷怪（1-100级）",
+        ["Auto Kaitun"] = "自动剃",
+        ["Auto Farm Nearest"] = "自动刷最近怪物",
+        ["Auto Farm Boss"] = "自动刷BOSS",
+        ["Auto Farm All Boss"] = "自动刷所有BOSS",
+        ["Auto Elite Hunter"] = "自动猎杀精英",
+        ["Auto Elite Hunter Hop"] = "跳跃猎杀精英",
+        ["Chest Farm"] = "刷宝箱",
+        ["Auto Farm Chest"] = "自动刷宝箱",
+        ["Farm Chest Bypass"] = "宝箱穿透",
+        ["Auto Stop Items"] = "自动停止拾取物品",
+        ["Fishing"] = "钓鱼",
+        ["Select Fishing Rod"] = "选择鱼竿",
+        ["Fishing Rod"] = "普通鱼竿",
+        ["Gold Rod"] = "黄金鱼竿",
+        ["Shark Rod"] = "鲨鱼鱼竿",
+        ["Shell Rod"] = "贝壳鱼竿",
+        ["Treasure Rod"] = "宝藏鱼竿",
+        ["Select Bait"] = "选择鱼饵",
+        ["Basic Bait"] = "基础鱼饵",
+        ["Kelp Bait"] = "海藻鱼饵",
+        ["Good Bait"] = "优质鱼饵",
+        ["Abyssal Bait"] = "深渊鱼饵",
+        ["Frozen Bait"] = "冰冻鱼饵",
+        ["Epic Bait"] = "史诗鱼饵",
+        ["Carnivore Bait"] = "食肉鱼饵",
+        ["Auto Fishing"] = "自动钓鱼",
+        ["Select Time Sell Fish"] = "设置卖鱼时间",
+        ["Auto Sell Fish"] = "自动卖鱼",
+        ["Berry"] = "浆果",
+        ["Collect Berries"] = "采集浆果",
+        ["Collect Berries Hop"] = "跳跃采集浆果",
+        ["Observation"] = "见闻色",
+        ["Farm Observation"] = "刷见闻色",
+        ["Farm Observation Hop"] = "跳跃刷见闻色",
+        ["Misc Bone"] = "骨头任务",
+        ["Auto Farm Bone"] = "自动刷骨头",
+        ["Accept Quest Bone"] = "接受骨头任务",
+        ["Collect Bone"] = "收集骨头",
+        ["Collect Egg"] = "收集龙蛋",
+        ["Material"] = "材料",
+        ["Select Material"] = "选择材料",
+        ["Select Items"] = "选择物品",
+        ["Start Farm Material"] = "开始刷材料",
+        ["Leather"] = "皮革",
+        ["Scrap Metal"] = "废金属",
+        ["Magma Ore"] = "岩浆矿石",
+        ["Angel Wings"] = "天使翅膀",
+        ["Boss"] = "BOSS",
+        ["Status"] = "状态",
+        ["Select Boss"] = "选择BOSS",
+        ["The Saw"] = "锯子",
+        ["The Gorilla King"] = "猩猩王",
+        ["Bobby"] = "鲍比",
+        ["Yeti"] = "雪人",
+        ["Mob Leader"] = "怪物首领",
+        ["Vice Admiral"] = "中将",
+        ["Warden"] = "狱卒长",
+        ["Chief Warden"] = "典狱长",
+        ["Swan"] = "斯旺",
+        ["Magma Admiral"] = "岩浆大将",
+        ["Fishman Lord"] = "鱼人领主",
+        ["Wysper"] = "维斯帕",
+        ["Thunder God"] = "雷神",
+        ["Cyborg"] = "改造人",
+        ["Saber Expert"] = "剑术专家",
+        ["Dought Boss"] = "蛋糕BOSS",
+        ["Auto Farm Cake Prince"] = "自动刷蛋糕王子",
+        ["Accept Quest Cake Prince"] = "接受蛋糕王子任务",
+        ["Auto Dough King Raid"] = "自动蛋糕王突袭",
+        ["Auto Farm Tyrant Of The Skies"] = "自动刷天空霸主",
+        ["Accept Quest Tyrant Skies"] = "接受天空霸主任务",
+        ["Auto Tyrant Of The Skies Boss"] = "自动天空霸主BOSS",
+        ["Auto Kill Golem Aura"] = "自动击杀魔像光环",
+        ["World"] = "世界",
+        ["Auto Second Sea"] = "自动前往第二海域",
+        ["Sea 1"] = "第一海域",
+        ["Teleport To Sea 1"] = "传送至第一海域",
+        ["Teleport To Sea 2"] = "传送至第二海域",
+        ["Teleport To Sea 3"] = "传送至第三海域",
+        ["Go To The Third Sea"] = "前往第三海域",
+        ["Select Island"] = "选择岛屿",
+        ["Fighting Style"] = "战斗风格",
+        ["Auto Superhuman"] = "自动刷超人拳",
+        ["Auto DeathStep"] = "自动刷死神步",
+        ["Auto Sharkman Karate"] = "自动刷鱼人空手道",
+        ["Auto Electric Claw"] = "自动刷电爪",
+        ["Auto Dragon Talon"] = "自动刷龙爪",
+        ["Auto GodHuman"] = "自动刷神拳",
+        ["Buy Black Leg"] = "购买黑足",
+        ["Buy Electro"] = "购买电击",
+        ["Buy Fishman Karate"] = "购买鱼人空手道",
+        ["Buy Dragon Claw"] = "购买龙爪",
+        ["Buy Superhuman"] = "购买超人拳",
+        ["Buy Death Step"] = "购买死神步",
+        ["Buy Sharkman Karate"] = "购买鱼人空手道",
+        ["Buy Electric Claw"] = "购买电爪",
+        ["Buy Dragon Talon"] = "购买龙爪",
+        ["Buy God Human"] = "购买神拳",
+        ["Buy Sanguine Art"] = "购买血术",
+        ["Quest And Item"] = "任务与物品",
+        ["Auto Greybeard"] = "自动刷白胡子",
+        ["Auto Saber"] = "自动刷佩剑",
+        ["Auto Pole v1"] = "自动刷长棍V1",
+        ["Quest"] = "任务",
+        ["Teleport To Dojo Trainer"] = "传送至道场训练师",
+        ["Teleport To Dragon Hunter"] = "传送至猎龙人",
+        ["Teleport To Dragon Wizard"] = "传送至龙法师",
+        ["Auto Quest Dragon Hunter"] = "自动猎龙人任务",
+        ["Craft Item"] = "制作物品",
+        ["Craft Volcanic Magnet"] = "制作火山磁铁",
+        ["Craft Dino Hood"] = "制作恐龙头套",
+        ["Craft T-Rex Skull"] = "制作霸王龙头骨",
+        ["Auto Fix Volcano"] = "自动修复火山",
+        ["Find Prehistoric Island"] = "寻找史前岛屿",
+        ["Teleport Prehistoric Island"] = "传送至史前岛屿",
+        ["Teleport Skull Core"] = "传送至头骨核心",
+        ["Race Draco"] = "龙族",
+        ["Auto Trial Draco"] = "自动龙族试炼",
+        ["Teleport Door Draco"] = "传送至龙族之门",
+        ["Abilities"] = "能力",
+        ["Infinite Energy"] = "无限能量",
+        ["Infinite Ability"] = "无限技能",
+        ["Infinite Obversation Range"] = "无限见闻色范围",
+        ["Buy Geppo"] = "购买月步",
+        ["Buy Buso Haki"] = "购买武装色霸气",
+        ["Buy Soru"] = "购买剃",
+        ["Buy Observation Haki"] = "购买见闻色霸气",
+        ["Auto Buy Abilities"] = "自动购买能力",
+        ["Settings Use Weapons"] = "武器使用设置",
+        ["Auto Use Melee"] = "自动使用近战",
+        ["Auto Use Fruit"] = "自动使用果实",
+        ["Auto Use Sword"] = "自动使用剑",
+        ["Auto Use Gun"] = "自动使用枪",
+        ["Player"] = "玩家",
+        ["Select Player"] = "选择玩家",
+        ["Refresh Player"] = "刷新玩家列表",
+        ["Spectate Player"] = "观战玩家",
+        ["Teleport"] = "传送",
+        ["Teleport Fast"] = "快速传送",
+        ["PvP"] = "pvp",
+        ["Aimbot Nearest"] = "自动瞄准最近玩家",
+        ["No Stun When Using Skill"] = "使用技能时不被眩晕",
+        ["Enabled PvP"] = "开启玩家对战",
+        ["Other Players"] = "其他玩家",
+        ["Auto Active V3"] = "自动激活V3",
+        ["Auto Active V4"] = "自动激活V4",
+        ["Enable Fly"] = "飞行",
+        ["Walk on Water"] = "水上行走",
+        ["Select Walk Speed"] = "选择行走速度",
+        ["Walk Speed"] = "移速",
+        ["Select High Jump"] = "跳跃高度",
+        ["High Jump"] = "高跳",
+        ["NoClip"] = "穿墙",
+        ["ESP MENU"] = "透视",
+        ["ESP Player"] = "玩家透视",
+        ["ESP Fruit"] = "果实透视",
+        ["ESP Berries"] = "浆果透视",
+        ["ESP Island"] = "岛屿透视",
+        ["Esp Mystic Island"] = "神秘岛屿透视",
+        ["ESP Island Kitsune"] = "狐狸岛屿透视",
+        ["Highlight"] = "高亮",
+        ["Troll"] = "整蛊",
+        ["Rain Fruit"] = "果实雨",
+        ["Instant Level/Beli/EXP"] = "瞬间升级/贝利/经验",
+        ["Fake Level"] = "伪造等级",
+        ["Fake Exp"] = "伪造经验",
+        ["Fake Money"] = "伪造金钱",
+        ["Fake Fragment"] = "伪造碎片",
+        ["Fake Points"] = "伪造点数",
+        ["Fake Bounty"] = "伪造悬赏",
+        ["Raid"] = "突袭",
+        ["Select Chips"] = "选择芯片",
+        ["Flame"] = "火焰",
+        ["Ice"] = "冰冻",
+        ["Quake"] = "震动",
+        ["Light"] = "闪光",
+        ["Dark"] = "黑暗",
+        ["Spider"] = "蜘蛛",
+        ["Magma"] = "岩浆",
+        ["Buddha"] = "大佛",
+        ["Sand"] = "沙子",
+        ["Phoenix"] = "不死鸟",
+        ["Dough"] = "糯糯",
+        ["Auto Select Dungeon"] = "自动选择地牢",
+        ["Auto Buy Chip"] = "自动购买芯片",
+        ["Buy Chip Select"] = "购买选择的芯片",
+        ["Auto Start Go To Dungeon"] = "自动前往地牢",
+        ["Start Go To Dungeon"] = "开始前往地牢",
+        ["Auto Next Island And Kill Mob"] = "自动前往下一个岛屿并击杀怪物",
+        ["Auto Awakener"] = "自动觉醒",
+        ["Devil Fruits"] = "恶魔果实",
+        ["Select Fruits Sniper"] = "选择狙击果实",
+        ["Spin-Spin"] = "转转",
+        ["Blade-Blade"] = "刃刃",
+        ["Spring-Spring"] = "弹簧弹簧",
+        ["Bomb-Bomb"] = "炸弹炸弹",
+        ["Smoke-Smoke"] = "烟雾烟雾",
+        ["Spike-Spike"] = "荆棘荆棘",
+        ["Flame-Flame"] = "火焰火焰",
+        ["Ice-Ice"] = "冰冻冰冻",
+        ["Sand-Sand"] = "沙沙",
+        ["Dark-Dark"] = "暗暗",
+        ["Eagle-Eagle"] = "隼隼",
+        ["Diamond-Diamond"] = "钻石钻石",
+        ["Light-Light"] = "闪光闪光",
+        ["Rubber-Rubber"] = "橡胶橡胶",
+        ["Ghost-Ghost"] = "幽灵幽灵",
+        ["Magma-Magma"] = "岩浆岩浆",
+        ["Quake-Quake"] = "震动震动",
+        ["Buddha-Buddha"] = "大佛大佛",
+        ["Love-Love"] = "甜甜甜甜",
+        ["Creation-Creation"] = "创造创造",
+        ["Spider-Spider"] = "蜘蛛蜘蛛",
+        ["Sound-Sound"] = "声音声音",
+        ["Phoenix-Phoenix"] = "不死鸟不死鸟",
+        ["Portal-Portal"] = "门",
+        ["Lightning-Lightning"] = "雷电雷电",
+        ["Pain-Pain"] = "疼痛疼痛",
+        ["Blizzard-Blizzard"] = "暴风雪暴风雪",
+        ["Auto Buy Fruit Sniper"] = "自动购买狙击果实",
+        ["Others"] = "其他",
+        ["Random Fruit"] = "随机果实",
+        ["Open Devil Shop"] = "打开恶魔果实商店",
+        ["Open Devil Shop Mirage"] = "打开幻影恶魔果实商店",
+        ["Auto Store Fruit"] = "自动存储果实",
+        ["Bring to Fruit"] = "传送至果实",
+        ["Tween to Fruit"] = "平滑移动至果实",
+        ["Sword"] = "剑类",
+        ["Cutlass"] = "弯刀",
+        ["Katana"] = "武士刀",
+        ["Iron Mace"] = "铁权杖",
+        ["Dual Katana"] = "双持武士刀",
+        ["Triple Katana"] = "三刀流",
+        ["Pipe"] = "钢管",
+        ["Dual-Headed Blade"] = "双头刀",
+        ["Bisento"] = "薙刀",
+        ["Soul Cane"] = "灵魂手杖",
+        ["Pole v.2"] = "长棍V2",
+        ["Gun"] = "枪械",
+        ["Slingshot"] = "弹弓",
+        ["Musket"] = "火绳枪",
+        ["Flintlock"] = "燧发枪",
+        ["Refined Slingshot"] = "精制弹弓",
+        ["Refined Flintlock"] = "精制燧发枪",
+        ["Cannon"] = "大炮",
+        ["Kabucha"] = "卡布卡炮",
+        ["Bizarre Rifle"] = "奇异步枪",
+        ["Accessories"] = "饰品",
+        ["Black Cape"] = "黑披风",
+        ["Swordsman Hat"] = "剑士帽",
+        ["Tomoe Ring"] = "巴纹戒指",
+        ["Reset Stats"] = "重置属性点",
+        ["Random Race"] = "随机种族",
+        ["Buy Ghoul"] = "购买食尸鬼种族",
+        ["Buy Cyborg"] = "购买改造人种族",
+        ["Server"] = "服务器",
+        ["Rejoin Server"] = "重新加入服务器",
+        ["Server Hop"] = "切换服务器",
+        ["Hop To Lower Player"] = "切换到低人数服务器",
+        ["Copy Job Id"] = "复制服务器ID",
+        ["Input Job Id"] = "输入服务器ID",
+        ["Join Sever"] = "加入服务器",
+        ["Misc"] = "杂项",
+        ["Title Name"] = "称号名称",
+        ["Teams"] = "阵营",
+        ["Join Pirates Team"] = "加入海盗阵营",
+        ["Join Marines Team"] = "加入海军阵营",
+        ["Codes"] = "兑换码",
+        ["Redeem All Codes"] = "兑换所有可用码",
+        ["State"] = "状态",
+        ["Health "] = "生命值 ",
+        ["Island"] = "岛屿",
+        ["Xeter Hub"]="Xeter",
+        ["WelcometoXeter Hub"]="欢迎来到Xeter",
+        ["Everyone GoestoDiscordto"]="有芙同享汉化",
+        ["Loading Done!"]="加载完成",
+        ["OFF"]="关闭",
+        ["ON"]="打开",
+    }
+
+    local function translateText(text)
+        if not text or type(text) ~= "string" then return text end
+        if Translations[text] then
+            return Translations[text]
+        end
+        for en, cn in pairs(Translations) do
+            if text:find(en) then
+                return text:gsub(en, cn)
+            end
+        end
+        return text
+    end
+
+    local function setupTranslationEngine()
+        local success, err = pcall(function()
+            local oldIndex = getrawmetatable(game).__newindex
+            setreadonly(getrawmetatable(game), false)
+            getrawmetatable(game).__newindex = newcclosure(function(t, k, v)
+                if (t:IsA("TextLabel") or t:IsA("TextButton") or t:IsA("TextBox")) and k == "Text" then
+                    v = translateText(tostring(v))
+                end
+                return oldIndex(t, k, v)
+            end)
+            setreadonly(getrawmetatable(game), true)
+        end)
+        if not success then
+            warn("元表劫持失败:", err)
+            local translated = {}
+            local function scanAndTranslate()
+                for _, gui in ipairs(game:GetService("CoreGui"):GetDescendants()) do
+                    if (gui:IsA("TextLabel") or gui:IsA("TextButton") or gui:IsA("TextBox")) and not translated[gui] then
+                        pcall(function()
+                            local text = gui.Text
+                            if text and text ~= "" then
+                                local translatedText = translateText(text)
+                                if translatedText ~= text then
+                                    gui.Text = translatedText
+                                    translated[gui] = true
+                                end
+                            end
+                        end)
+                    end
+                end
+                local player = game:GetService("Players").LocalPlayer
+                if player and player:FindFirstChild("PlayerGui") then
+                    for _, gui in ipairs(player.PlayerGui:GetDescendants()) do
+                        if (gui:IsA("TextLabel") or gui:IsA("TextButton") or gui:IsA("TextBox")) and not translated[gui] then
+                            pcall(function()
+                                local text = gui.Text
+                                if text and text ~= "" then
+                                    local translatedText = translateText(text)
+                                    if translatedText ~= text then
+                                        gui.Text = translatedText
+                                        translated[gui] = true
+                                    end
+                                end
+                            end)
+                        end
+                    end
+                end
+            end
+            local function setupDescendantListener(parent)
+                parent.DescendantAdded:Connect(function(descendant)
+                    if descendant:IsA("TextLabel") or descendant:IsA("TextButton") or descendant:IsA("TextBox") then
+                        task.wait(0.1)
+                        pcall(function()
+                            local text = descendant.Text
+                            if text and text ~= "" then
+                                local translatedText = translateText(text)
+                                if translatedText ~= text then
+                                    descendant.Text = translatedText
+                                end
+                            end
+                        end)
+                    end
+                end)
+            end
+            pcall(setupDescendantListener, game:GetService("CoreGui"))
+            local player = game:GetService("Players").LocalPlayer
+            if player and player:FindFirstChild("PlayerGui") then
+                pcall(setupDescendantListener, player.PlayerGui)
+            end
+            while true do
+                scanAndTranslate()
+                task.wait(3)
+            end
+        end
+    end
+
+    task.wait(2)
+    setupTranslationEngine()
+
+    local success, err = pcall(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/TlDinhKhoi/Xeter/refs/heads/main/Main.lua"))()
+    end)
+    if not success then
+        warn("加载失败:", err)
+    end
+end
